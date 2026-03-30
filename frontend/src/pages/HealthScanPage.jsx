@@ -100,7 +100,7 @@ const HealthScanPage = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('http://localhost:8000/ai/scan_image', formData, {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL || 'https://medicareai-kr9n.onrender.com'}/ai/scan_image`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': token ? `Bearer ${token}` : ''

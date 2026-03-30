@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000', // Update for prod
+    baseURL: import.meta.env.VITE_API_URL || 'https://medicareai-kr9n.onrender.com', // Updated for prod
 });
 
 // Add a request interceptor to include the auth token
